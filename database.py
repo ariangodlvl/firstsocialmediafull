@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine 
 from sqlalchemy.orm import sessionmaker 
 #engine 
+from config import coonfig
+#databasename , port, databasepassword , databaseusername , databasehost
 
-DATABASEINFO = "postgresql+psycopg://postgres:1381Arian1381@localhost/firstcompletesicialmedia"
+DATABASEINFO = f"postgresql+psycopg://{coonfig.databaseusername}:{coonfig.databasepassword}{coonfig.databasehost}/{coonfig.databasename}"
 
 ENGINe = create_engine(DATABASEINFO)
 #session =  Session()
